@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Ex5jQuery</title>
+</head>
+<body>
+	<form id="form1" name="form1" method="post" action="">
+	  <p>First Name: 
+		<input type="text" name="textfield" id="firstname" />
+	  </p>
+	  <p>Gender: <input type="radio" name="gender" value="Male" id="gender_0" />Male
+		<input type="radio" name="gender" value="Female" id="gender_1" />Female  </p>
+	  <p>Nice? 
+		<input type="checkbox" name="nice" value="yes" id="nice" />
+	  </p>
+  
+	  <p>
+		<input type="button" name="button" id="Pbutton" value="Process" />
+	  </p>
+	</form>
+</body>
+
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+	  $('#Pbutton').click(function() {
+		var message = "First name is " + $('#firstname').val() + "\n";
+		if ($('[name=gender]').val()=='Male')
+		   message += "Gender is male\n";
+		if ($('[name=gender]').val()=='Female')
+		   message += "Gender is female\n";
+		if ($('#nice').val()=='yes')
+		   message += "And they are nice!\n";
+		alert(message);
+	  });
+	});
+</script>

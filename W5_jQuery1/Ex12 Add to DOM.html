@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Ex12 Add things</title>
+</head>
+
+<body>
+<p>My favorite sites:</p>
+<ul id="favlist">
+  <li><a href="http://www.google.com">Google</a> </li>
+  <li><a href="http://www.bc.edu">BC</a></li>
+  <li><a href="http://www.jquery.com">jQuery</a></li>
+</ul>
+<p>
+Add a link:</p>
+<p>Link Name:
+  <input type="text" name="linkname" id="linkname" />
+</p>
+<p>URL:
+  <input type="text" name="linkURL" id="linkURL" />
+</p>
+<p>
+  <input type="button" name="button" id="button" value="Add" />
+</p>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+  $('#button').click(function() {
+    var linkname = $("#linkname").val();
+	var linkURL = $("#linkURL").val();
+	var elemstring = '<li><a href="' + linkURL + '">' + linkname + '</a></li>';
+	$("#favlist").append(elemstring);
+  });
+});
+</script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Ex1_jQuery.htm</title>
+</head>
+<body>
+	<h1>The first H1</h1>
+	<p>The first paragraph</p>
+	<p>The second paragraph</p>
+	<p>The third paragraph</p>
+	<h1>The second H1</h1>
+	<p>The fourth paragraph</p>
+	<div id="mydiv">
+	<p>The first paragraph in a div</p>
+	<p>The second paragraph in a div </p>
+</div>
+</body>
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+	  alert("Checking the html of the first h1 returned...");
+	  alert($('h1').html());
+	  alert("I will now change it.");
+	  $('h1').html("This is a <i>new</i> h1 now.");
+	  //alert("Checking the html of the div returned...");
+	  //alert($('#mydiv').html());
+	});
+</script>

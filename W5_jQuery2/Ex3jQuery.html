@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Ex2jQuery</title>
+</head>
+<body>
+	<h1>The first H1</h1>
+	<p>The first paragraph. It contains a <a href="http://www.etsu.edu">link</a>.</p>
+	<p>The second paragraph</p>
+	<p>The third paragraph</p>
+	<h1>The second H1</h1>
+	<p>The fourth paragraph</p>
+	<div id="mydiv">
+		<p>The first paragraph in a div</p>
+		<p>The second paragraph in a div </p>
+	</div>
+</body>
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+	  alert("I will now remove all the paragraphs");
+	  $('p').remove();
+	});
+</script>
