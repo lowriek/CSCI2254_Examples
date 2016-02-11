@@ -22,7 +22,6 @@ function deleteFromList(listid){
 }
 
 function addToList(listid, htmlToAdd){
-
 	if (htmlToAdd === -1) return;
 	
 	// Create a new element and store it in a variable.
