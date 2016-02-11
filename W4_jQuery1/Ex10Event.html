@@ -73,10 +73,10 @@ th	{
 $(document).ready(function() {
   $('#tablecontrol').addClass('hidden');
   
-  $('td div').click(function() {
-    $(this).attr("color", "red");
+  $('td').click(function() {
+    $(this).css("background-color", "red");
   });
-  
+  /**
   $('#main_table').click(function() {
     if ($('#tablecontrol').is(':hidden')) {
 	  $('#tablecontrol').fadeIn('slow');
@@ -84,6 +84,7 @@ $(document).ready(function() {
 	  $('#tablecontrol').fadeOut('slow');
 	}
   });
+  **/
 
   $('#hh').click(function() {
     $('th').toggleClass('highlight');
