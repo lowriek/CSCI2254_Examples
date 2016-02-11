@@ -16,5 +16,7 @@ button
 	{
 		font-size: 125%;
 	}
-
+.selected {
+    background-color:#efefef;
+}
 
