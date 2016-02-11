@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Ex 7: jQuery More Reformatting</title>
+
+	<style type="text/css">
+		<!--
+		.highlight {
+			background-color: #CCFFFF;
+		}
+		.highlight2 {
+			background-color: #FFCCFF;
+		}
+		.buttonhighlight {
+			background-color: #999999;
+		}
+		.hidden {
+			display: none;
+		}
+		th, td {
+		padding: 7px 10px 10px 10px;
+		text-align: center;
+}
+th	{
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		font-size: 90%;
+		border-bottom: 2px solid #111111;
+		border-top: 1px solid #999;
+}
+		-->
+</style>
+</head>
+<body>
+<p align="center">To reformat table: click on it.</p>
+<p align="center" id="tablecontrol">
+  <input type="button" name="hh" id="hh" value="Highlight Headers" /> 
+  <input type="button" name="hl" id="hl" value="Highlight Alternate Lines" />
+  <input type="button" name="if" id="if" value="Increase Table Font Size" /> 
+  <input type="button" name="dl" id="df" value="Decrease Table Font Size" />
+</p>
+<table id="main_table">
+<tr><th>Lastname</th><th>Firstname</th><th>Major</th><th>Grad Year</th><th>GPA</th></tr>
+<tr><td>Abama</td><td>Al</td><td>COMP SCI B.S.</td><td>2008</td><td>2.51</td></tr>
+<tr><td>Able</td><td>Izzy</td><td>COMP SCI B.S.</td><td>2008</td><td>3.17</td></tr>
+<tr><td>Abred</td><td>Pete</td><td>FINANCE</td><td>2008</td><td>3.21</td></tr>
+<tr><td>Absent</td><td>Marcus</td><td>COMP SCI B.S.</td><td>2008</td><td>2.96</td></tr>
+<tr><td>Ages</td><td>Trudy</td><td>BIOLOGY</td><td>2009</td><td>2.21</td></tr>
+<tr><td>Aki</td><td>Terry</td><td>FINANCE</td><td>2009</td><td>3.16</td></tr>
+<tr><td>Anthemum</td><td>Chris</td><td>ACCOUNTING</td><td>2008</td><td>2.76</td></tr>
+<tr><td>Apt</td><td>Les</td><td>ACCOUNTING</td><td>2010</td><td>2.40</td></tr>
+<tr><td>Banks</td><td>Robin</td><td>ACCOUNTING</td><td>2008</td><td>2.57</td></tr>
+<tr><td>Basket</td><td>Esther</td><td>FINANCE</td><td>2008</td><td>3.67</td></tr>
+<tr><td>Baum</td><td>Adam</td><td>INFO SYSTEMS</td><td>2009</td><td>2.59</td></tr>
+<tr><td>Bread</td><td>Ginger</td><td>MARKETING</td><td>2008</td><td>2.21</td></tr>
+<tr><td>Bouy</td><td>Aaron</td><td>ACCOUNTING</td><td>2008</td><td>2.34</td></tr>
+<tr><td>Chance</td><td>Slim</td><td>GENERAL MGMT</td><td>2008</td><td>2.84</td></tr>
+<tr><td>Clair</td><td>Ida</td><td>ACCOUNTING</td><td>2008</td><td>2.36</td></tr>
+<tr><td>Cloth</td><td>Terry</td><td>FINANCE</td><td>2008</td><td>3.91</td></tr>
+<tr><td>Closed</td><td>Doris</td><td>INFO SYSTEMS</td><td>2008</td><td>2.51</td></tr>
+<tr><td>Dewauck</td><td>Cy</td><td>ACCOUNTING</td><td>2009</td><td>2.91</td></tr>
+<tr><td>Disorderly</td><td>Duncan</td><td>OPERATION MGT</td><td>2009</td><td>2.21</td></tr>
+<tr><td>Droid</td><td>Anne</td><td>FINANCE</td><td>2009</td><td>2.68</td></tr>
+<tr><td>Dropper</td><td>Yves</td><td>MARKETING</td><td>2008</td><td>2.16</td></tr>
+<tr><td>Ethelene</td><td>Polly</td><td>INFO SYSTEMS</td><td>2008</td><td>2.23</td></tr>
+<tr><td>Ferterbest</td><td>Hope</td><td>FINANCE</td><td>2008</td><td>3.50</td></tr>
+<tr><td>Free</td><td>Scott</td><td>OPERATION MGT</td><td>2008</td><td>2.79</td></tr>
+</table>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+  $('#tablecontrol').addClass('hidden');
+  
+  $('#main_table').click(function() {
+    $('#tablecontrol').toggleClass('hidden');
+  });
+
+  $('#hh').click(function() {
+    $('th').toggleClass('highlight');
+	$('#hh').toggleClass('buttonhighlight');
+  });
+
+  $('#hl').click(function() {
+    $('tr:odd').toggleClass('highlight2');
+	$('#hl').toggleClass('buttonhighlight');
+  });
+  
+  $('#if').click(function() {
+    var tblfontsize = $('table').css('font-size');
+	var tblfontnum = parseFloat(tblfontsize, 10);
+	tblfontnum += 2;
+	$('table').css('font-size', tblfontnum);
+  });
+  
+  $('#df').click(function() {
+    var tblfontsize = $('table').css('font-size');
+	var tblfontnum = parseFloat(tblfontsize, 10);
+	tblfontnum -= 2;
+	$('table').css('font-size', tblfontnum);
+  });
+});
+
+</script>
+</html>

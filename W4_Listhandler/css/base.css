@@ -1,0 +1,20 @@
+@charset "UTF-8";
+body 
+	{ 
+		font-family: "Lucida Sans Unicode", "Lucida Grande";
+		font-size: 125%;
+		background-color: #FFCF75;
+	}
+
+.left 
+	{
+		width: 33%;
+	    float:left;
+	}	
+
+button
+	{
+		font-size: 125%;
+	}
+
+
