@@ -23,21 +23,28 @@
 		<input type="text" name="newworkoutduration" id="newworkoutduration" size="5"/>
 		<br>
 		<button id="logworkout">Log my workout!</button>
-	</fieldset>		
-
-	<table id="workouttable">
-		<tr>
-			<th>Date</th>
-			<th>Description</th>
-			<th>Type</th>
-			<th>Duration</th>
-		</tr>
-		<tbody>
-		
-		</tbody>
-	</table>
-
+	</fieldset>	
 	
+	<fieldset id="summary">
+		<legend>Your results</legend>
+		You have worked out <span id="workouttimes">0</span> times
+		for a total of <span id="workoutminutes">0</span> minutes.
+	</fieldset>
+	
+	<fieldset>
+		<legend>Your workouts</legend>
+		<table id="workouttable">
+			<tr>
+				<th>Date</th>
+				<th>Description</th>
+				<th>Type</th>
+				<th>Duration</th>
+			</tr>
+			<tbody>
+		
+			</tbody>
+		</table>
+	</fieldset>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="js/workout.js"></script>
