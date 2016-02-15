@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>jQuery workout log with the Datepicker from jQuery UI</title>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="css/base.css">
+</head>
+<body>
+	<fieldset>
+		<legend>Enter a workout</legend>
+		<label for="newworkoutdate">Date: </label>
+		<input type="text" name="newworkoutdate" id="newworkoutdate"/>
+		<br>
+		<label for="newworkoutdescription">Description: </label>
+		<input type="text" name="newworkoutdescription"id="newworkoutdescription"/>
+		<br>
+		Type: 
+		<br><input type="checkbox" id="Strength" value="Strength"/>	<label for=Strength>Strength</label>
+		<br><input type="checkbox" id="Flexibility" value="Flexibility"/> <label for=Flexibility>Flexibility</label>
+		<br><input type="checkbox" id="Cardio" value="Cardio"/>	<label for=Cardio>Cardio</label>
+		<br>
+		<label for="newworkoutduration">Duration (minutes): </label>
+		<input type="text" name="newworkoutduration" id="newworkoutduration" size="5"/>
+		<br>
+		<button id="logworkout">Log my workout!</button>
+	</fieldset>	
+	
+	<fieldset id="summary">
+		<legend>Your results</legend>
+		You have worked out <span id="workouttimes">0</span> times
+		for a total of <span id="workoutminutes">0</span> minutes.
+	</fieldset>
+	
+	<fieldset>
+		<legend>Your workouts</legend>
+		<table id="workouttable">
+			<tr>
+				<th>Date</th>
+				<th>Description</th>
+				<th>Type</th>
+				<th>Duration</th>
+			</tr>
+			<tbody>
+		
+			</tbody>
+		</table>
+	</fieldset>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="js/workoutDP.js"></script>
+
+
+</body>
+</html>

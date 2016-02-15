@@ -1,0 +1,23 @@
+@charset "UTF-8";
+body { 
+	font-size: 100%; 
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+		
+input  { 
+	font-size: 125%; color: blue; 
+		
+label {
+	font-size: 100%;
+	width:200px;
+	display:block;
+	float:left;
+	padding-right: 10px;
+	text-align: right;
+}	
+submit{
+	float: left;
+} 	
+.styled-select select {
+	font-size: 200%; color: blue; 
+}

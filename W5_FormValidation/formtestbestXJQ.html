@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Form Validation with jQuery</title>
+    <link rel="stylesheet" href="css/base.css">
+</head>
+<body>
+<h2> Web Apps Form Validation with JQuery</h2>
+Fill this form in and submit it !!
+<hr>
+<article id="allaboutyou"></article>
+<hr>
+<form method="get" id="mytestform" onsubmit="return false;">
+
+	Enter your name in this text field: 
+	<input type=text size="10" name="username" id="enteredname"/>
+	<article id="nameerror"></article>
+	
+	<br> Enter your graduation year: 
+	<input type=radio name="gradyear" value="senior" id="radio1"/> 2016
+	<input type=radio name="gradyear" value="junior" id="radio2"/> 2017
+	<input type=radio name="gradyear" value="sophomore" id="radio3"/> 2018
+	<input type=radio name="gradyear" value="freshman" id="radio4"/> 2019
+
+	<br>What programming languages do you know?<br>
+	<input type=checkbox name="knowsJava" id="knowsJava" value="JavaScript" /> JavaScript
+	<br>
+	<input type=checkbox name="knowsC" id="knowsHTML" value="HTML" /> HTML
+	<br>
+	<input type=checkbox name="knowsJQ" id="knowsJQ"  value="JQ" /> jQuery
+	<article id="languagereport"></article>
+
+	<br>What is your favorite thing to do on a Saturday morning?
+	<select id="myactivity" name="activity">
+		<option value="0" >Select an Activity </option>
+		<option value="run" >Run 10 miles </option>
+		<option value="work">Do homework  </option>
+		<option value="both" >Both	</option>
+	</select>
+
+	<br>
+	Add your confidential comments here:
+	<br>
+	<textarea rows=6 cols=40 name="comments">
+	</textarea>
+
+	<article class="submit">
+	<input type=submit id="OK" name="OK" value="Submit Me!"/>
+	</article>
+</form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="js/formtestjq.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Yeah</title>
+	<style>
+		body { font-size: 100%; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
+		input { font-size: 125%; color: blue; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
+		label {
+			font-size: 100%;
+			width:200px;
+			display:block;
+			float:left;
+			padding-right: 10px;
+			text-align: right;
+	    }	
+	    submit{
+	    	float: left;
+	    }
+	    	
+	</style>
+	<script type="text/javascript" src="js/formtestbest.js"></script>
+</head>
+<body>
+<h2> CSCI 2254 Example Javascript Form</h2>
+Fill this form in and submit it !!
+<hr>
+<article id="allaboutyou"></article>
+<hr>
+<form method="get" id="mytestform" onsubmit="return displaydata();">
+Enter your name in this text field: 
+<input type=text size="10" name="username" id="enteredname"/>
+<article id="nameerror"></article>
+<br> Enter your graduation year: 
+<input type=radio name="gradyear" value="senior" id="radio1"/> 2014
+<input type=radio name="gradyear" value="junior" id="radio2"/> 2015
+<input type=radio name="gradyear" value="sophomore" id="radio3"/> 2016
+<input type=radio name="gradyear" value="freshman" id="radio4"/> 2017
+
+<br>What programming languages do you know?<br>
+<input type=checkbox name="knowsJava" id="knowsJava" value="JavaScript" /> JavaScript
+<br>
+<input type=checkbox name="knowsC" id="knowsHTML" value="HTML" /> HTML
+<br>
+<input type=checkbox name="knowsPHP" id="knowsPHP"  value="PHP" /> PHP
+<article id="languagereport"></article>
+
+<br>What is your favorite thing to do on a Saturday morning?
+<select onchange="reportactivity();" id="myactivity" name="activity">
+	<option value="0" >Select an Activity </option>
+	<option value="run" >Run 10 miles </option>
+	<option value="work">Do homework  </option>
+	<option value="both" >Both	</option>
+</select>
+<article id="activityreport"></article>
+
+Add your confidential comments here:
+<textarea rows=6 cols=40 name="comments">
+</textarea>
+
+<article class="submit">
+<input type=submit name="OK" value="Submit Me!"/>
+</article>
+<script type="text/javascript">setmeup();</script>
+</form>
+</body>
+</html>
