@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<Menu>
+<!-- Toppings was chosen as a tag since it is easily identifiable by the owner. -->
+  <Category name="Pizza">
+    <Menu_Item name="Tomato &amp; Cheese">
+      <Size>
+        <Small>
+          <Price>5.50</Price>
+        </Small>
+        <Large>
+          <Price>9.75</Price>
+        </Large>
+      </Size>
+    </Menu_Item>
+	<Menu_Item name="Onion">
+      <Size>
+        <Small>
+          <Price>6.85</Price>
+        </Small>
+        <Large>
+          <Price>10.85</Price>
+        </Large>
+      </Size>
+    </Menu_Item>
+	<Menu_Item name="Pepper">
+      <Size>
+        <Small>
+          <Price>6.85</Price>
+        </Small>
+        <Large>
+          <Price>10.85</Price>
+        </Large>
+      </Size>
+    </Menu_Item>
+  </Category>
+  
+  <Category name="Specialty Pizza">
+	<Menu_Item name="Three Aces Special">
+	  <Size>
+        <Small>
+          <Price>9.80</Price>
+        </Small>
+        <Large>
+          <Price>15.80</Price>
+        </Large>
+      </Size>
+	</Menu_Item>
+    <Menu_Item name="Mediterranean">
+	  <Size>
+        <Small>
+          <Price>9.80</Price>
+        </Small>
+        <Large>
+          <Price>15.80</Price>
+        </Large>
+      </Size>
+	</Menu_Item>
+    <Menu_Item name="Vegetarian">
+	  <Size>
+        <Small>
+          <Price>9.80</Price>
+        </Small>
+        <Large>
+          <Price>15.80</Price>
+        </Large>
+      </Size>
+	</Menu_Item>	
+  </Category>
+
+  <Category name="Special Dinner">
+    <Menu_Item name="Chicken Wing Dinner">
+	  <Price>7.25</Price>
+	</Menu_Item>
+	<Menu_Item name="Gyro Plate">
+	  <Price>7.25</Price>
+	</Menu_Item>
+	<Menu_Item name="Chicken Kabob Plate">
+	  <Price>7.85</Price>
+	</Menu_Item>
+  </Category>
+
+  <Category name="Side Order">
+	<Menu_Item name="Onion Rings">
+      <Size>
+        <Small>
+          <Price>2.60</Price>
+        </Small>
+        <Large>
+          <Price>2.95</Price>
+        </Large>
+      </Size>
+    </Menu_Item>
+	<Menu_Item name="French Fries">
+      <Size>
+        <Small>
+          <Price>2.25</Price>
+        </Small>
+        <Large>
+          <Price>2.65</Price>
+        </Large>
+      </Size>
+    </Menu_Item>
+	<Menu_Item name="Spicy Fries">
+      <Size>
+        <Small>
+          <Price>2.60</Price>
+        </Small>
+        <Large>
+          <Price>2.95</Price>
+        </Large>
+      </Size>
+    </Menu_Item>
+  </Category>
+  
+  <Category name="Salad">
+	<Menu_Item name="Garden">
+      <Size>
+        <Small>
+          <Price>3.50</Price>
+        </Small>
+        <Large>
+          <Price>4.50</Price>
+        </Large>
+      </Size>
+    </Menu_Item>
+    <Menu_Item name="Greek">
+      <Size>
+        <Small>
+          <Price>4.50</Price>
+        </Small>
+        <Large>
+          <Price>5.50</Price>
+        </Large>
+      </Size>
+    </Menu_Item>
+	<Menu_Item name="Kabob Salad">
+      <Size>
+        <Small>
+          <Price>5.45</Price>
+        </Small>
+        <Large>
+          <Price>6.45</Price>
+        </Large>
+      </Size>
+    </Menu_Item>
+  </Category>
+  
+  <Category name="Spaghetti">
+  	<Menu_Item name="With Sauce">
+	  <Price>5.40</Price>
+    </Menu_Item>
+	<Menu_Item name="With Sausage">
+	  <Price>6.45</Price>
+    </Menu_Item>
+  	<Menu_Item name="A la Three Aces">
+	  <Price>7.25</Price>
+    </Menu_Item>
+  </Category>
+  
+  <Category name="Ziti">
+  	<Menu_Item name="With Meat Ball">
+	  <Price>6.45</Price>
+    </Menu_Item>
+  	<Menu_Item name="With Veal">
+	  <Price>6.45</Price>
+    </Menu_Item>
+  	<Menu_Item name="Eggplant Ziti Dinner">
+	  <Price>7.25</Price>
+    </Menu_Item>
+  </Category>
+ 
+  <Category name="Lasagna">
+  	<Menu_Item name="With Sauce">
+	  <Price>6.25</Price>
+    </Menu_Item>
+	<Menu_Item name="With Sausage">
+	  <Price>7.25</Price>
+    </Menu_Item>
+  	<Menu_Item name="Veggie">
+	  <Price>7.25</Price>
+    </Menu_Item>
+  </Category>
+
+  <Category name="Ravioli">
+  	<Menu_Item name="With Sauce">
+	  <Price>6.25</Price>
+    </Menu_Item>
+	<Menu_Item name="With Sausage">
+	  <Price>7.25</Price>
+    </Menu_Item>
+  	<Menu_Item name="With Meatball">
+	  <Price>7.25</Price>
+    </Menu_Item>
+  </Category>
+
+  <Category name="Manicotti">
+  	<Menu_Item name="With Sauce">
+	  <Price>6.25</Price>
+    </Menu_Item>
+	<Menu_Item name="With Sausage">
+	  <Price>7.25</Price>
+    </Menu_Item>
+  	<Menu_Item name="With Meatball">
+	  <Price>7.25</Price>
+    </Menu_Item>
+  </Category>
+  <Category name="Calzone">
+  	<Menu_Item name="Vegetarian">
+      <Size>
+        <Large>
+          <Price>7.35</Price>
+        </Large>
+      </Size>
+    </Menu_Item>
+  	<Menu_Item name="Sausage">
+      <Size>
+        <Large>
+          <Price>7.35</Price>
+        </Large>
+      </Size>
+    </Menu_Item>
+  	<Menu_Item name="Grecian">
+      <Size>
+        <Large>
+          <Price>7.35</Price>
+        </Large>
+      </Size>
+    </Menu_Item>
+  </Category>
+
+  <Category name="Wrap">
+  	<Menu_Item name="Turkey Club Wrap">
+      <Price>4.95</Price>
+    </Menu_Item>
+	<Menu_Item name="Chicken Cobb">
+      <Price>4.95</Price>
+    </Menu_Item>
+	<Menu_Item name="Greek Supreme">
+      <Price>4.95</Price>
+    </Menu_Item>
+  </Category>  
+  
+  <Category name="Grinder">
+	<Menu_Item name="Meatless">
+      <Size>
+        <Small>
+          <Price>4.50</Price>
+        </Small>
+        <Large>
+          <Price>4.95</Price>
+        </Large>
+      </Size>
+    </Menu_Item>
+    <Menu_Item name="Hamburger">
+      <Size>
+        <Small>
+          <Price>4.50</Price>
+        </Small>
+        <Large>
+          <Price>4.95</Price>
+        </Large>
+      </Size>
+    </Menu_Item>
+	<Menu_Item name="Three Aces Special">
+      <Size>
+        <Small>
+          <Price>5.30</Price>
+        </Small>
+        <Large>
+          <Price>6.40</Price>
+        </Large>
+      </Size>
+    </Menu_Item>
+  </Category>
+</Menu>
