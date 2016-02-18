@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>HTML Entity Experiments</title>
+</head>
+<body>
+Divide
+<div id="divide">&divide;</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+
+  var foo = $('#divide').text();
+  
+  document.writeln(" foo:  " + foo + "<br><br>");
+
+  var i = 247;
+  document.writeln(" i: " + "&#" + i.toString() + ";");
+  
+//   for (i = 64; i < 300; i++)
+//   	document.writeln(" i: " + i + " " + "&#" + i.toString() + "; &nbsp;&nbsp;");
+
+});
+</script>
+</body>
+</html>
