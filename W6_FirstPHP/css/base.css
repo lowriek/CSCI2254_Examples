@@ -1,0 +1,37 @@
+@charset "UTF-8";
+body 
+	{ 
+		font-family: "Lucida Sans Unicode", "Lucida Grande";
+		font-size: 125%;
+		background-color: #FFCF75;
+	}
+.correct 
+	{
+		background-color: lightgreen;
+
+	}
+.incorrect 
+	{
+		background-color: pink;
+	}	
+.undecided 
+	{
+		background-color: #FFCF75;
+	}
+.right 
+	{
+		float:right;
+	}
+fieldset
+	{
+		border: 5px groove #FF8000;
+	}
+legend
+	{
+		background-color: #AAF200;
+	}
+input,select,button 
+	{
+		font-family: Verdana, sans-serif; font-size: 125%;
+		background-color: #FF8000;
+	}
