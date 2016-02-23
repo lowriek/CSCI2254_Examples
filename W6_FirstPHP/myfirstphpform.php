@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title>My First PHP Form</title>
+	<meta charset="utf-8" />
+	<title>My First PHP Form</title>
 </head>
 <body>
 <?php echo "<pre>". print_r($_GET) . "</pre>"; ?>
 <h1>My First PHP Form</h1>
 <fieldset><legend>The First Form</legend>
-    <form method="get">
-    First: <input type="text" name="count1"/><br>
-    Second: <input type="text" name="count2"/>
-    <input type="submit"  name="mysubmit" value="Go"/>
+
+	<form method="get">
+	First: <input type="text" name="count1"/><br>
+	Second: <input type="text" name="count2"/>
+	<input type="submit"  name="mysubmit" value="Go"/>
+
 </form>
 </fieldset>
 <br><br>
