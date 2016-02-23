@@ -17,8 +17,6 @@
 	
 	createQuestion($atom);
 ?>
-<script type="text/javascript" src="js/myarray.js"></script>
-<script type="text/javascript" src="js/quizradio.js"></script>
 </body>
 </html>
 <?php

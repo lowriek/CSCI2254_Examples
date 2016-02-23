@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-	<head><title> Form and script all in one... and its sticky!!</title>
+	<head>
+	<title> Form and script all in one... </title>
 	<link rel="stylesheet" href="css/base.css" />
 </head>
 <body>
-<h2> CSCI2254 Example Form PHP Only</h2>
+<h3>Dumping $_GET array </h3>
+<?php	echo "<pre>"; print_r($_GET); echo "</pre>"; ?>
+<hr>
 <?php
 if(isset($_GET['OK'])) {
 	handleform();	
@@ -15,7 +18,7 @@ displayForm();  // I always want to display the form
 </body>
 </html>
 <?php 
-function handleform(){  // This function shows how to make each form element sticky.
+function handleform(){ 
 
 	echo "<pre>".print_r($_GET)."</pre>";
 
@@ -25,7 +28,7 @@ function handleform(){  // This function shows how to make each form element sti
 	$knowsphp  = isset( $_GET['knowsPHP'] )   ?   "yes" : "";
 	$knowsc    = isset( $_GET['knowsC'] )     ?   "yes" : "";
 	$activity  = isset( $_GET['activity'] )   ?   $_GET['activity'] : "";
-	$comments  = isset( $_GET['comments'] )   ?   $_GET['comments'] : ""
+	$comments  = isset( $_GET['comments'] )   ?   $_GET['comments'] : "";
 
 	echo "<h3>Hello, $name! </h3> I see you are a $gradyear who knows: ";
 
@@ -69,7 +72,8 @@ function displayForm() {
 <hr>
 <form method="get">
 	<br>
-	Enter your name in this text field: <input type=text size=10 name="username" value=""/>
+	Enter your name in this text field: 
+	<input type=text size=10 name="username" value=""/>
 	<br><br>
 	Enter your graduation year:
 	<br>
@@ -91,7 +95,7 @@ function displayForm() {
 	<br><br>
 	What is your favorite thing to do on a Saturday morning?
 	<br>
-	<select onchange="displayvalue()" name="activity">
+	<select name="activity">
 		<option value="run">Run 10 miles</option>
 		<option value="work">Do homework</option>
 		<option value="both">Both</option>
