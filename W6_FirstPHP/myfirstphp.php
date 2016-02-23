@@ -24,8 +24,10 @@
 	echo " the average is $average<br>";
 	
 	$petarray = array("dog", "cat", "fish");
-	?> There are <?php echo count($petarray); ?> pets
-	<?php
+?> 
+	There are <?php echo count($petarray); ?> pets
+
+<?php
 	echo "<ul>";
 	foreach ($petarray as $value)
 		echo "<li>$value</li>";
