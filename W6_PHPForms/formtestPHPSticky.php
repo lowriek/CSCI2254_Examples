@@ -6,7 +6,7 @@
 <h3>Dumping $_GET array </h3>
 <?php	echo "<pre>"; print_r($_GET); echo "</pre>"; ?>
 <hr>
-<h2> CSCI2254 Example Form PHP Only</h2>
+<h2> CSCI2254 Example Form PHP Only  </h2>
 <?php
 if(isset($_GET['OK'])) {
 	handleform();	
