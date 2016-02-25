@@ -2,26 +2,26 @@
 include('dbconn.php');
 ?><!DOCTYPE html>
 <head>
-<title>Fourth query</title>
+<title>Selecting Multiple Records</title>
 </head>
 <body>
 <?php
 
-	$dbc= connectToDB("jed");	
+	$dbc = connect_to_db( "jed" );	
 	$query = "select lastname, firstname from student";
-	$result = performQuery($dbc, $query);
+	$result = perform_query( $dbc, $query );
+	
 	echo "<ul>\n";
-	while ($row=mysqli_fetch_array($result, MYSQLI_ASSOC)){
+	while ( $row = mysqli_fetch_array( $result, MYSQLI_ASSOC ) ) {
 	
 		$firstname = $row['firstname'];
-		$lastname = $row['lastname'];
+		$lastname  = $row['lastname'];
 	   
 		echo "<li>$firstname  $lastname </li>\n";
 	}
-		
 	echo "</ul>\n";
 
-	disconnectFromDB($dbc, $result);
+	disconnect_from_db( $dbc, $result );
 ?>
 </body>
 </html>
