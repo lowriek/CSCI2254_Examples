@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<school>
+
+<students>
+  <student id="001" class="2016">
+    <name>Warren Peace</name>
+    <status>undergrad</status>
+    <gpa>3.5</gpa>
+  </student>
+
+  <student id="002" class="2013">
+    <name>Barb Dwyer</name>
+    <status>undergrad</status>
+    <gpa>3.9</gpa>
+  </student>
+
+  <student id="003" class="2016">
+    <name>Jo King</name>
+    <status>grad</status>
+    <gpa>2.5</gpa>
+  </student>
+
+  <student id="004" class="2013">
+    <name>Olive Yew</name>
+    <status>grad</status>
+  </student>
+  
+  <student id="005" class="2015">
+    <name>Tim Burr</name>
+    <status>grad</status>
+  </student>
+  
+  <student id="006" class="2014">
+    <name>April May</name>
+    <status>undergrad</status>
+  </student>
+</students>
+
+<faculties>
+  <faculty id="01">
+    <name>Kate Lowrie</name>
+    <status>Professor</status>    
+  </faculty>
+
+  <faculty id="02">
+    <name>Alan Lin</name>
+    <status>TA</status>    
+  </faculty>
+
+  <faculty id="03">
+    <name>Brennan Perry</name>
+    <status>TA</status>    
+  </faculty>
+</faculties>
+
+</school>
+
