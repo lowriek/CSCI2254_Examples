@@ -65,7 +65,7 @@ function display_insert_form() {
 function insert_user( $name, $pw ){
 	$encode = sha1( $pw );
 	$query="insert into pwdemo values ('$name', '$encode')";
-	$dbc = connect_to_db( "jed" );
+	$dbc = connect_to_db( "csci2254" );
 	$result = perform_query( $dbc, $query );
 	if ( !$result )
 		echo "<br>Insert Failed - $query";
@@ -75,7 +75,7 @@ function insert_user( $name, $pw ){
 function validate_user( $name, $pw ){
 	$encode = sha1( $pw );
 	$query = "select * from pwdemo where name='$name' and pass='$encode'";
-	$dbc = connect_to_db( "jed" );
+	$dbc = connect_to_db( "csci2254" );
 	$result = perform_query( $dbc, $query );
 	$row =mysqli_fetch_array( $result, MYSQLI_ASSOC );
 	echo "<pre>";

@@ -38,7 +38,7 @@ function display_form( $menuname ){
 	
 	create_select( $menuname );
 	echo '<input type="submit" name="submitted" value="Go!">
-	</form>\n';
+	</form>';
 }
 
 function create_select( $menuname ){
@@ -46,7 +46,7 @@ function create_select( $menuname ){
 	echo "<select name= '$menuname'>\n";
 	$dbc    = connect_to_db( "jed" );	
 	$query  = "select ID, lastname, firstname from student";
-	$result = create_select( $dbc, $query );
+	$result = perform_query( $dbc, $query );
 	
 	while ($row = mysqli_fetch_array( $result, MYSQLI_ASSOC )){
 	
