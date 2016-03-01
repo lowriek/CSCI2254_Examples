@@ -12,7 +12,7 @@
 
 <?php  
 		if ( isset( $_GET['formsubmitted'] ) ) {
-			$favorites = $_GET['favorites']; 
+			$favorites = isset( $_GET['favorites'] ) ? $_GET['favorites'] : array() ; 
 			handle_form( $favorites );  
 	   		display_form( $favorites );  
 	   	} else
@@ -38,7 +38,7 @@ function make_fruit_checkboxes( $favorites )
 	$fruits = array("apple", "orange", "banana", "grapefruit", "kiwi", "mango");
 	
 	foreach ( $fruits as $value ) {
-		if ( FALSE !== array_search( $value, $favorites ) )
+		if ( false !== array_search( $value, $favorites ) )
 			echo "<input type=\"checkbox\" name=\"favorites[]\" value=\"$value\" 
 				checked=\"checked\"> $value<br>\n";
 		else

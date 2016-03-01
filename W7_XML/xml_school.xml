@@ -8,7 +8,7 @@
     <gpa>3.5</gpa>
   </student>
 
-  <student id="002" class="2013">
+  <student id="002" class="2017">
     <name>Barb Dwyer</name>
     <status>undergrad</status>
     <gpa>3.9</gpa>
@@ -17,20 +17,20 @@
   <student id="003" class="2016">
     <name>Jo King</name>
     <status>grad</status>
-    <gpa>2.5</gpa>
+    <gpa>2.2</gpa>
   </student>
 
-  <student id="004" class="2013">
+  <student id="004" class="2017">
     <name>Olive Yew</name>
     <status>grad</status>
   </student>
   
-  <student id="005" class="2015">
+  <student id="005" class="2019">
     <name>Tim Burr</name>
     <status>grad</status>
   </student>
   
-  <student id="006" class="2014">
+  <student id="006" class="2018">
     <name>April May</name>
     <status>undergrad</status>
   </student>
@@ -43,14 +43,26 @@
   </faculty>
 
   <faculty id="02">
-    <name>Alan Lin</name>
+    <name>Jenny Koh</name>
     <status>TA</status>    
   </faculty>
 
   <faculty id="03">
-    <name>Brennan Perry</name>
+    <name>Shannon Specht</name>
     <status>TA</status>    
   </faculty>
+  
+  <faculty id="04">
+    <name>Jacob Secor</name>
+    <status>TA</status>    
+  </faculty>
+  
+  <faculty id="05">
+    <name>Roseanna Chu</name>
+    <status>TA</status>    
+  </faculty>
+
+  
 </faculties>
 
 </school>
