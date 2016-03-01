@@ -49,8 +49,8 @@ function make_fruit_checkboxes( $favorites )
 ?>
 <?php 
 function handle_form( $favorites ){
-		foreach ( $favorites as $value )
-			echo "$value is a favorite<br>";
+	foreach ( $favorites as $value )
+		echo "$value is a favorite<br>";
 }
 ?>
 
