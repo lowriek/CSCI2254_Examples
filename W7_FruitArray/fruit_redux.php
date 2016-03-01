@@ -49,7 +49,7 @@ function make_food_checkboxes($favorites)
 function get_foods() 
 {
 
-      $file = "nutrition.xml";
+      $file = "../W7_XML/nutrition.xml";
 
       if (!$xmlstr=file_get_contents($file))
          die("Unable to read XML file $file");
