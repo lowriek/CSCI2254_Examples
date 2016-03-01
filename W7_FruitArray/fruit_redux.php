@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Fruit Example</title>
+	<link rel="stylesheet" type="text/css" href="css/baseA.css" />	  
 </head>
 <body>
 <?php
