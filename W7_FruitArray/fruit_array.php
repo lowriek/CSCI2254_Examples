@@ -12,7 +12,7 @@
 
 <?php  
 		if ( isset( $_GET['formsubmitted'] ) ) {
-			$favorites = $_GET['favorites']; 
+			$favorites = isset( $_GET['favorites'] ) ? $_GET['favorites'] : array() ; 
 			handle_form( $favorites );  
 	   		display_form( $favorites );  
 	   	} else
@@ -49,8 +49,8 @@ function make_fruit_checkboxes( $favorites )
 ?>
 <?php 
 function handle_form( $favorites ){
-		foreach ( $favorites as $value )
-			echo "$value is a favorite<br>";
+	foreach ( $favorites as $value )
+		echo "$value is a favorite<br>";
 }
 ?>
 

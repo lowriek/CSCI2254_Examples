@@ -6,36 +6,36 @@
 </head>
 <body>
 <?php
-if (isset($_GET['formsubmitted'])) {
-	$currentfavs = $_GET['favorites'];
-	handleform($currentfavs); 
+if ( isset( $_GET['formsubmitted'] ) ) {
+	$currentfavs = isset( $_GET['favorites'] ) ? $_GET['favorites'] : array();
+	handleform( $currentfavs ); 
 } else
 	$currentfavs = "";
 
-displayform($currentfavs); 
+displayform( $currentfavs ); 
 ?>
 </body>
 </html>
 <?php
 // form to demonstrate getting arrays as input from forms.
-function displayform($favorites){
+function displayform( $favorites ){
 ?>
 <fieldset><legend>Choose foods</legend>	
 <form method="get">
 <p>What foods do you like?</p>
-<?  make_food_checkboxes($favorites);  ?>
+<?  make_food_checkboxes( $favorites );  ?>
 
 <input type="submit" name="formsubmitted" value="doit"/>
 </form>
 </fieldset>
 <?}?>
 <?
-function make_food_checkboxes($favorites)
+function make_food_checkboxes( $favorites )
 {
 	$foods = get_foods();
 	
-	foreach ($foods as $value){
-		if (!empty($favorites) and (FALSE !== array_search($value, $favorites)))
+	foreach ( $foods as $value ){
+		if ( FALSE == empty($favorites) and ( FALSE !== array_search( $value, $favorites )))
 			echo "<input type=\"checkbox\" name=\"favorites[]\" value=\"$value\" checked=\"checked\"> $value<br>\n";
 		else
 			echo "<input type=\"checkbox\" name=\"favorites[]\" value=\"$value\"> $value<br>\n";
@@ -48,15 +48,14 @@ function make_food_checkboxes($favorites)
  */
 function get_foods() 
 {
-
       $file = "nutrition.xml";
 
-      if (!$xmlstr=file_get_contents($file))
+      if (!$xmlstr = file_get_contents( $file ) )
          die("Unable to read XML file $file");
-      $xml = new SimpleXMLElement($xmlstr);
+      $xml = new SimpleXMLElement( $xmlstr );
       
       $foods = array();
-      foreach ($xml -> food as $f) {
+      foreach ( $xml -> food as $f ) {
         $foods[] = $f->name;
       }
       return $foods;

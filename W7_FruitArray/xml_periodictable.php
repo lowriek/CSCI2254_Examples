@@ -5,7 +5,7 @@ K Lowrie 2013
 */
 ?>
 <?
-$xml = new SimpleXMLElement(file_get_contents("http://www.w3.org/XML/Binary/2005/03/test-data/Over100K/periodic.xml"));
+$xml = new SimpleXMLElement( file_get_contents( "http://www.w3.org/XML/Binary/2005/03/test-data/Over100K/periodic.xml" ) );
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,7 +16,7 @@ $xml = new SimpleXMLElement(file_get_contents("http://www.w3.org/XML/Binary/2005
 
 xpath('//ATOM') will return all elements: <br />
 <?php
-$test = $xml->xpath('/PERIODIC_TABLE//ATOM');
+$test = $xml->xpath( '/PERIODIC_TABLE//ATOM' );
 ?>
 <pre>
   <? //print_r($test); ?>
@@ -26,7 +26,7 @@ $test = $xml->xpath('/PERIODIC_TABLE//ATOM');
 
 
 Example 1: Using foreach: foreach($xml->ATOM as $atom): <br>
-    <?php foreach($xml->ATOM as $atom)
+    <?php foreach( $xml->ATOM as $atom )
        {
            echo "$atom->NAME <br>";
        }
@@ -36,7 +36,7 @@ Example 2: Make a drop down menu
 
 <select name="periodictable">
 <?php
-	foreach($xml->ATOM as $atom){
+	foreach( $xml->ATOM as $atom ){
 		echo "<option value=\">$atom->ATOMIC_WEIGHT\">";
 		echo $atom->NAME;
 		echo "</option>\n";
@@ -48,5 +48,5 @@ Example 2: Make a drop down menu
 Example 3: Find the element with a boiling point greater than 5500 Kelvin<br >
 <?php	
 	$bp1040 = $xml->xpath('//ATOM[BOILING_POINT>"5500"]');
-	foreach($bp1040 as $atom)
+	foreach( $bp1040 as $atom )
 		echo $atom->NAME.", ";
