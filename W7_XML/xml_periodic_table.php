@@ -20,7 +20,7 @@ xpath('//ATOM') will return all elements: <br />
 $test = $xml->xpath( '/PERIODIC_TABLE//ATOM' );
 ?>
 <pre>
-  <? //print_r($test); ?>
+  <?php //print_r($test); ?>
 </pre>
 
 <hr />
