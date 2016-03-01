@@ -3,6 +3,8 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Cast Example</title>
+	<link rel="stylesheet" type="text/css" href="css/baseA.css" />	  
+
 </head>
 <body>
 <pre><?php print_r( $_GET );?></pre>

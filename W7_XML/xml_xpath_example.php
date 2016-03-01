@@ -5,6 +5,7 @@ $xml = new SimpleXMLElement( file_get_contents( "xml_school.xml" ) );
 <html>
 <head>
   <title>xml examples</title>
+	<link rel="stylesheet" type="text/css" href="css/baseA.css" />	  
 </head>
 <body>
 

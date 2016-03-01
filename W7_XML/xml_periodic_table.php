@@ -10,7 +10,8 @@ $xml = new SimpleXMLElement( file_get_contents( "http://www.w3.org/XML/Binary/20
 <!DOCTYPE html>
 <html>
 <head>
-  <title>The Periodic Table</title>
+	<title>The Periodic Table</title>
+	<link rel="stylesheet" type="text/css" href="css/baseA.css" />	  
 </head>
 <body>
 

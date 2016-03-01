@@ -1,6 +1,7 @@
 <html>
   <head>
     <title>XML Demo 1 Reading XML data from a file</title>
+	<link rel="stylesheet" type="text/css" href="css/baseA.css" />	      
   </head>
   <body>
     <?php
