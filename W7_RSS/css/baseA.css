@@ -8,3 +8,8 @@ label {
         padding-right: 10px;
         text-align: right;
 }
+.news {
+	overflow: auto;
+	height: 300px;
+	border: 3px groove blue;	
+}
