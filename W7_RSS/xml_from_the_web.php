@@ -1,6 +1,7 @@
 <html>
   <head>
     <title>XML demo 3: RSS News Viewer</title>
+    <link rel="stylesheet" type="text/css" href="css/baseA.css" />	  
   </head>
   <style>		
   
