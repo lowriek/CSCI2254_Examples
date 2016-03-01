@@ -1,20 +1,15 @@
 <html>
 <head>
     <title>XML demo 3: RSS News Viewer</title>
-     <style>		
-	  .news {
-				overflow: auto;
-				height: 300px;
-				border: 3px groove blue;	
-	 }
-  </style>
+	<link rel="stylesheet" type="text/css" href="css/baseA.css" />	      
 </head>
 <body>
   <?php
   $feeds = array('http://rss.nytimes.com/services/xml/rss/nyt/Space.xml',
 				  'http://www.usa.gov/rss/updates.xml',
 				  'http://www.nasa.gov/rss/dyn/image_of_the_day.rss',
-				  'http://cscilab.bc.edu/~csinsider/?feed=rss2'
+				  'http://cscilab.bc.edu/~csinsider/?feed=rss2',
+				  'http://www.newyorker.com/feed/humor'
 				);
   print_r($_GET);
   ?>
@@ -65,10 +60,14 @@ function create_form( $farray, $menuname ){
 <?php
 }
 function create_menu($farray, $menuname){
-					
+	$current_feed = isset( $_GET['feed'] ) ?  $_GET['feed'] : "";
 	echo "<select name='$menuname'>";
 	foreach ( $farray as $f ) {
-		echo "<option value='$f'>$f</option>";
+		if ( $current_feed == $f )  {
+			echo "<option value='$f' selected>$f</option>";
+		} else {
+			echo "<option value='$f'>$f</option>";
+		}
 	}
 	echo '</select>';
 }
