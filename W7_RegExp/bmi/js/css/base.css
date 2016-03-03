@@ -1,0 +1,19 @@
+body { font-size: 100%; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
+input,select { font-size: 100%; color: blue; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
+label {
+		font-size: 100%;
+		width:180px;
+        display:block;
+        float:left;
+        padding-right: 10px;
+        text-align: right;
+}
+
+table, th, td {border: 2px groove green; }
+		.alt1 {background-color: #BDB76B }
+		.alt2 {background-color: #ffffff }
+	
+th.countryname {width:225px }
+th.countryvalue {width:25% }
+
+         

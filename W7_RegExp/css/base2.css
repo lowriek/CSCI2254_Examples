@@ -1,0 +1,48 @@
+@charset "UTF-8";
+body 
+	{ 
+		font-family: Helvetica, sans-serif;
+		background-color: #74A6BD;
+		font-size: 125%
+	}
+img 
+	{
+	float:left;
+	}
+.right 
+	{
+	float:right;
+	}
+fieldset
+	{
+		border: 5px groove #FFCF75;
+	}
+legend
+	{
+		background-color: #FFCF75;
+	}
+	
+label 
+	{
+		font-size: 125%
+		float: left;
+		height:20px;
+		margin:15px;
+		background-color: #D4E7ED;
+	}
+input 
+	{
+	    /*float:left;*/
+	    font-size: 125%
+		height:20px;
+		margin:5px;
+		background-color: #D4E7ED;
+	}
+	
+select 
+	{
+		float: left;
+		height:20px;
+		margin:5px;
+		background-color: #D4E7ED;
+	}

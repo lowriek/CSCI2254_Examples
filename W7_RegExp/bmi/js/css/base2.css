@@ -1,0 +1,41 @@
+@charset "UTF-8";
+body 
+	{ 
+		font-family: Verdana, sans-serif;
+		background-color: #FFFFCC;
+	}
+	/* 
+table, th 
+	{
+		border: 5px groove green;
+	}
+ */
+fieldset
+	{
+		border: 5px groove green;
+	}
+	
+input 
+	{
+		font-family: Verdana, sans-serif; 
+		font-size: 125%
+	}
+.ereport
+	{
+		font-size: 125%;
+		color: red;
+	}
+	
+
+/* 
+header 
+	{ 
+		float: left 
+	}
+<span class="erp" id="nameerror"></span>	
+
+
+.clearfix:before, .clearfix:after { content: ""; display table;}
+.clearfix:after { clear: both;}
+.clearfix {zoom: 1;}
+ */

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>BMI Example</title>
+	<link rel="stylesheet" href="../css/base.css" />
+	<script type="text/javascript" src="js/bmiPG.js"></script>
+</head>
+<body>
+<form method="get" action="" name="bmicalculator" onsubmit="return calculateBMI();">
+  <table border="0">
+      <tr>
+        <td>Enter your weight:</td><td><input size="4" name="weight" /></td><td>pounds</td>
+      </tr>
+      <tr>
+        <td>Enter your height:</td><td><input size="4" name="feet" /></td>
+        <td>feet <input size="3" name="inches" /> inches </td>
+      </tr>
+  </table>
+  <br>
+  <input value="Get BMI" type="submit" /><br>
+</form>
+<br>
+<div id="bmiresult"></div>
+<img id="bmiresultimg" src="initial.GIF" />
+</body>
+</html>
