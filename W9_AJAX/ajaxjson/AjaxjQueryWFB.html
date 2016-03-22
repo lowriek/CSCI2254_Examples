@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Ajax JSON Demo</title>
+  </head>
+  <body>
+  	<form id="ajaxRequestForm" method="get">
+  		<input type="text" id="countryName" name="countryName"/><br>
+  		<input type="button" id="getcountryinfo"  value="Get info!"/><br>
+  		<br>
+  	</form>
+  	<div id="results"></div>
+  	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript">
+		$(document).ready(function(){
+			$( "#getcountryinfo" ).click( function(){
+			
+				//get the form data and then serialize that
+            	var dataString = $("#ajaxRequestForm").serialize();
+            	
+                //start ajax request
+                var request = $.ajax({
+                    url: "wfbjson.php",
+                    type: "GET",
+                    data: dataString,
+                    dataType: "json"
+                    });
+                    
+                request.done ( function( data ) {      		
+                	$("#results").html("");
+					$("#results").append("<b>Country Name:</b> " + data.countryInfo.CountryName + "<br>");
+                    $("#results").append("<b>Languages:</b> " + data.countryInfo.Languages  + "<br>");
+                    $("#results").append("<b>Background:</b> " + data.countryInfo.Background  + "<br>");
+                });
+                    
+                request.fail (function(jqXHR, textStatus) {
+						alert( "Request failed: " + textStatus );
+					});
+				});
+			});
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Ajax JSON Just Text Demo</title>
+  </head>
+  <body>
+  	<input type="button" id="gethello"  value="Say hello to the server!"/><br>
+  	<br>
+  	<div id="results"></div>
+  	
+  	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		// This is more correct than the first demo because it is setting up a request
+		// and using json (which is like html)
+		$(document).ready(function(){
+			$( "#gethello" ).click( function(){
+				//start ajax request
+				var request = $.ajax({
+					url: "ajaxhello.php",
+					type: "GET",
+					dataType: "text"
+					});
+				
+				request.done (function(data) {
+						$('#results').html( data );
+					});
+				
+				request.fail (function(jqXHR, textStatus) {
+						alert( "Request failed: " + textStatus );
+					});
+				});
+			});
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Ajax Demo</title>
+	</head>
+  <body>
+  	Enter a country name: <input type="text" id="CountryName" /><br>
+  	<input type="button" id="getbackground"  value="Look up background summary"/><br>
+  	<br>
+  	<div id="countryResults"></div>
+  	
+  	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript">
+		$(document).ready(function(){
+			$("#getbackground").click(function(){
+				// Creates a URL with a get variable
+				// This counts on the user typing a valid country in the text box
+				$("#countryResults").load("CountryBackground.php?country=" + escape($("#CountryName").val()));
+			});
+		});
+    </script>
+  </body>
+</html>
