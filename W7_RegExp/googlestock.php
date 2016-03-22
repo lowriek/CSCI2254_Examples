@@ -5,8 +5,8 @@
 </head>
 <body>
 <?php
-   $stock = 'GOOG';
-   //$stock = 'AMZN';
+   //$stock = 'GOOG';
+   $stock = 'AMZN';
    $stocklower = strtolower($stock);
 
    $page = 'http://finance.yahoo.com/q?s=' . $stock;
