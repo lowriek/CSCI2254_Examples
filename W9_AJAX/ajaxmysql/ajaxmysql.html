@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<table class="mGrid" id="jsondata">
+	<thead>
+		<th>Id</th>
+		<th>Name</th>
+		<th>Age</th>
+		<th>Gender</th>
+		<th>Location</th>
+	</thead>
+	<tbody></tbody>
+</table>
+
+<button>make table</button>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+	var url="ajaxmysqldemo.php";
+	$("#jsondata tbody").html("");
+	$.getJSON(url,function(data){
+		$.each(data.users, function(i,user){
+			var newRow = "<tr>"
+				+"<td>"+user.id+"</td>"
+				+"<td>"+user.name+"</td>"
+				+"<td>"+user.age+"</td>"
+				+"<td>"+user.gender+"</td>"
+				+"<td>"+user.location+"</td>"
+				+"</tr>" ;
+			$(newRow).appendTo("#jsondata tbody");
+		});
+	});
+});
+<script>
+</body>
+</html>
