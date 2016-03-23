@@ -2,6 +2,5 @@
 	
 	$name = $_POST['name'];
 	$city = $_POST['city'];
-	$country_data = array('dataName' => $name, 'dataCity' => $city);
-	echo json_encode($country_data);
-
+	$data_from_post = array('dataName' => $name, 'dataCity' => $city);
+	echo json_encode($data_from_post);
