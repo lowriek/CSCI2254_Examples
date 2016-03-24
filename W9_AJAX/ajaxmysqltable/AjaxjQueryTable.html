@@ -15,18 +15,17 @@
             		$.getJSON( "mysqljsonMR.php" , function(data) {
 						$("#results").html("");
 
-						$.each(data.countries, function(i, country){
-					
-							$("#results").append("<b>Country Name:</b> " + country[0] + "<br>");
- 							$("#results").append("<b>Languages:</b> "    + country[1]  + "<br>");
- 							$("#results").append("<b>Background:</b> "   + country[2]  + "<br>");
+						$.each(data, function(i, country){
+							$("#results").append("<b>Country Name:</b> " + country.CountryName + "<br>");
+ 							$("#results").append("<b>Languages:</b> "    + country.Languages  + "<br>");
+ 							$("#results").append("<b>Background:</b> "   + country.Background  + "<br>");
 						});
-			
-					request.fail (function(jqXHR, textStatus) {
-						alert( "Request failed: " + textStatus );
-					});
+						
+  					})
+  					.fail(function() {
+    						console.log( "getJSON error" );
+    				});
 			});
-		});
     </script>
 
   </body>

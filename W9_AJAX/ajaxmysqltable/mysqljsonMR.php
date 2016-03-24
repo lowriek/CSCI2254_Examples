@@ -9,9 +9,9 @@
 		die("bad query $query");
 	}
 	$country_data = array();	// put the rows as objects in an array
-	while ( $row = mysqli_fetch_row( $result ) ) {
+	while ( $row = mysqli_fetch_object( $result ) ) {
 		$country_data[] = $row;
 	}
-	echo '{"countries":'.json_encode($country_data).'}';
+	echo json_encode($country_data);
 
 	mysqli_close($dbc);
