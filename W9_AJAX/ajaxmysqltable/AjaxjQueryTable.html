@@ -5,41 +5,28 @@
 	<title>Ajax JSON Demo</title>
   </head>
   <body>
-  	<form id="ajaxRequestForm" method="get">
-  		<input type="text" id="countryName" name="countryName"/><br>
-  		<input type="button" id="getcountryinfo"  value="Get info!"/><br>
-  		<br>
-  	</form>
+  	
   	<div id="results"></div>
   	
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script type="text/javascript">
 		$(document).ready(function(){
-			$( "#getcountryinfo" ).click( function(){
-			
-				//get the form data and then serialize that
-            		var dataString = $("#ajaxRequestForm").serialize();
-            	
-					//start ajax request
-					var request = $.ajax({
-						url: "mysqljsonMR.php",
-						type: "GET",
-						data: dataString,
-						dataType: "json"
-						});
-					
-					request.done ( function( data ) {      		
+            		
+            		$.getJSON( "mysqljsonMR.php" , function(data) {
 						$("#results").html("");
-						$("#results").append("<b>Country Name:</b> " + data.countryInfo.CountryName + "<br>");
-						$("#results").append("<b>Languages:</b> " + data.countryInfo.Languages  + "<br>");
-						$("#results").append("<b>Background:</b> " + data.countryInfo.Background  + "<br>");
-					});
+
+						$.each(data.countries, function(i, country){
 					
+							$("#results").append("<b>Country Name:</b> " + country[0] + "<br>");
+ 							$("#results").append("<b>Languages:</b> "    + country[1]  + "<br>");
+ 							$("#results").append("<b>Background:</b> "   + country[2]  + "<br>");
+						});
+			
 					request.fail (function(jqXHR, textStatus) {
 						alert( "Request failed: " + textStatus );
 					});
-				});
 			});
+		});
     </script>
 
   </body>
