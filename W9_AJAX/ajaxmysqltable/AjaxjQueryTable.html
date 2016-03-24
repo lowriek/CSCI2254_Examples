@@ -5,26 +5,27 @@
 	<title>Ajax JSON Demo</title>
   </head>
   <body>
-  	
+  	<button id="maketable">Make Table</button>
   	<div id="results"></div>
   	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script type="text/javascript">
 		$(document).ready(function(){
-            		
-            		$.getJSON( "mysqljsonMR.php" , function(data) {
-						$("#results").html("");
-
-						$.each(data, function(i, country){
-							$("#results").append("<b>Country Name:</b> " + country.CountryName + "<br>");
- 							$("#results").append("<b>Languages:</b> "    + country.Languages  + "<br>");
- 							$("#results").append("<b>Background:</b> "   + country.Background  + "<br>");
-						});
+		
+            		$("#maketable").click(function() {
+						$.getJSON( "mysqljsonMR.php" , function(data) {
+							$("#results").html("<table><tr><th>Country Name</th><th>Continent</th></tr>");
+					
+							$.each(data, function(i, country){
+								$("#results").append("<tr><td>" + country.CountryName + "</td><td>" + country.Continent + "</td></tr>");
+							});
+							$("#results").append("</table>");
 						
-  					})
-  					.fail(function() {
-    						console.log( "getJSON error" );
-    				});
+						})
+						.fail(function() {
+								console.log( "getJSON error" );
+						});
+					});
 			});
     </script>
 
