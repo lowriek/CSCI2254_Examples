@@ -61,7 +61,7 @@
    		}
    		$loc = getLocation($xml);
    		
-   		//echo "<pre>"; print_r( $xml);  	echo "</pre>";
+   		echo "<pre>"; print_r( $xml);  	echo "</pre>";
 
    		return $loc;
 

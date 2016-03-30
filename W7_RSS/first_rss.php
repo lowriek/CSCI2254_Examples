@@ -7,7 +7,9 @@
 </head>
 <body>
 <?php // Load and parse the XML document
-	$rss =  simplexml_load_file('http://syndication.boston.com/news?mode=rss_10');
+
+	$rss =  simplexml_load_file('http://www.boston.com/tag/weather-wisdom/feed');
+	//$rss =  simplexml_load_file('http://syndication.boston.com/news?mode=rss_10');
 	$title =  $rss->channel->title;
 	echo "<h1>$title</h1>";
 
