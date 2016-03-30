@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Ajax setting a cookie</title>
+  </head>
+  <body>
+  	<input type="button" id="setcookie"  value="Set a cookie"/><br>
+  	<input type="button" id="getcookie"  value="Show all cookies"/><br>
+  	<input type="button" id="clearcookie"  value="Clear a cookie"/><br>
+
+  	<br>
+  	<div id="results"></div>
+  	
+  	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		// This is more correct than the first demo because it is setting up a request
+		// and using json (which is like html)
+		$(document).ready(function(){
+			$( "#setcookie" ).click( function(){
+				$("#results").load("ajaxcookie.php?op=setcookie");
+			});
+			$( "#getcookie" ).click( function(){
+				$("#results").load("ajaxcookie.php?op=getcookie");
+			});
+			$( "#clearcookie" ).click( function(){
+				$("#results").load("ajaxcookie.php?op=clearcookie");
+			});
+		});
+			
+    </script>
+  </body>
+</html>
