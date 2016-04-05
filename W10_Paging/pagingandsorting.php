@@ -6,6 +6,11 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Pageable Displays</title>
+	<style>
+		tr:nth-child(even) {
+			background-color: #FF8000;
+		}
+	</style>
 		<link rel="stylesheet" href="css/base.css" />
 </head>
 <body>

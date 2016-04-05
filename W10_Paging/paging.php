@@ -8,7 +8,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">	
 	<title>Pageable Displays</title>
-		
+	<style>
+		tr:nth-child(even) {
+			background-color: #FF8000;
+		}
+	</style>
+	
     <!-- Bootstrap -->
 
 	<!-- Latest compiled and minified CSS -->
@@ -20,20 +25,20 @@
 		  <h1>Paging Example!</h1>
 		<?php
 			// pagination support
-			$itemsPerPage=7;
+			$itemsPerPage = 7;
 	
 			// figure out how many pages
 			$pages = findpages($itemsPerPage);
 			$start = findstart();
 	
-			createDataTable($start, $itemsPerPage);
+			createDataTable( $start, $itemsPerPage );
 		?>
 		</div>
 	</div>
 	<div class="container">
 		<div class="well">
 		<?php
-			createPageLinks($start, $pages, $itemsPerPage);
+			createPageLinks( $start, $pages, $itemsPerPage );
 		?>
 		</div>
 	</div>
@@ -57,12 +62,10 @@ function createDataTable($start, $itemsPerPage){
 				</tr>\n";
 				
 				
-	$dbc = connectToDB("wfb2007");
-	$result = performQuery($dbc, $qry);
-	$class = "alt2";
-	while (@extract(mysqli_fetch_array($result, MYSQLI_ASSOC))) {
-		$class = ($class=='alt1' ? 'alt2':'alt1');
-		echo "	<tr class=\"$class\">
+	$dbc = connectToDB( "wfb2007" );
+	$result = performQuery( $dbc, $qry );
+	while (@extract( mysqli_fetch_array( $result, MYSQLI_ASSOC ) )) {
+		echo "	<tr>
 					<td>$CountryName</td>
 					<td>$Imports</td>
 					<td>$Exports</td>
@@ -105,11 +108,10 @@ function findstart(){
 function createPageLinks($start, $pages, $itemsPerPage){
 	
 	// creating page links
-	if ($pages > 1) {
-		
+	if ( $pages > 1 ) {
 		
 		// print Previous if not on the first page
-		$currentPage=($start/$itemsPerPage) + 1;
+		$currentPage = ( $start / $itemsPerPage ) + 1;
 		if ($currentPage != 1){
 			echo '<a href="paging.php?s='.($start - $itemsPerPage) . 
 														'&amp;p=' . $pages . '"> Previous </a>';
@@ -118,7 +120,7 @@ function createPageLinks($start, $pages, $itemsPerPage){
 		// print page numbers
 		for ($i=1; $i <= $pages; $i++) {
 				if ($i != $currentPage) {
-					echo '<a href="paging.php?s='.(($itemsPerPage * ($i-1))) . 
+					echo '<a href="paging.php?s='. (( $itemsPerPage * ( $i - 1 ))) . 
 												'&amp;p=' . $pages . '"> '. $i .'  </a>'."\n";
 				}  else {
 					echo $i . ' ';
@@ -126,8 +128,8 @@ function createPageLinks($start, $pages, $itemsPerPage){
 		}
 	
 		// print next if not on the last page
-		if ($currentPage != $pages){
-			echo '<a href="paging.php?s='.($start + $itemsPerPage) . '&amp;p=' . 
+		if ( $currentPage != $pages ){
+			echo '<a href="paging.php?s='. ($start + $itemsPerPage) . '&amp;p=' . 
 												$pages . '"> Next </a>';
 		}
 	}
