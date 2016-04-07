@@ -6,18 +6,7 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Pageable Displays</title>
-<<<<<<< HEAD:W10_Paging/pageandsort.php
-	<style>
-		tr:nth-child(even) {
-			background-color: #FF8000;
-		}
-	</style>		
-    <!-- Bootstrap -->
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.4/cerulean/bootstrap.min.css">
-=======
-		<link rel="stylesheet" href="css/base.css" />
->>>>>>> origin/master:W11_Bootstrap/pagingandsorting.php
+
 </head>
 <body>
 <?php
