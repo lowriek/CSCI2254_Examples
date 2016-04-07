@@ -8,15 +8,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">	
 	<title>Pageable Displays</title>
-		
-    <!-- Bootstrap -->
 
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.4/cerulean/bootstrap.min.css">
+
 </head>
 <body>
-	<div class='container'>
-		<div class="jumbotron">
+
 		  <h1>Paging Example!</h1>
 		<?php
 			// pagination support
@@ -28,19 +24,12 @@
 	
 			createDataTable($start, $itemsPerPage);
 		?>
-		</div>
-	</div>
-	<div class="container">
-		<div class="well">
+
+
 		<?php
 			createPageLinks($start, $pages, $itemsPerPage);
 		?>
-		</div>
-	</div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		
 </body>
 </html>
 <?php
