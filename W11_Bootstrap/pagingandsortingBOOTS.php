@@ -4,58 +4,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">	
+	<meta charset="utf-8" />
 	<title>Pageable Displays</title>
-	<style>
-		tr:nth-child(even) {
-			background-color: #FF8000;
-		}
-	</style>		
-    <!-- Bootstrap -->
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.4/cerulean/bootstrap.min.css">
+		<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
 </head>
 <body>
+  <div class="container">
+<div class="jumbotron">
+  <h1>My Paging Example <small>using Bootstrap</small></h1>
+</div>
+</div>
 
-	<div class='container'>
-		<div class="jumbotron">
-			<h1>Page and Sort Example!</h1>
-			<?php
-				// pagination support
-				$itemsPerPage=7;
+  <div class="container">
+
+<?php
 	
-				// figure out how many pages
-				$pages = findpages( $itemsPerPage );
-				$start = findstart();
+	// pagination support
+	$itemsPerPage=10;
 	
-				$links = createSortLinks();
-				createDataTable($start, $itemsPerPage, $links);
-			?>
-		</div>
-	</div>
-	<div class="container">
-		<div class="well">
-			<?php
-				createPageLinks($start, $pages, $itemsPerPage, $links['orderby']);
-			?>
-		</div>
-	</div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	// figure out how many pages
+	$pages = findpages($itemsPerPage);
+	$start = findstart();
+		
+	$links = createSortLinks();
+	createDataTable($start, $itemsPerPage, $links);
+	createPageLinks($start, $pages, $itemsPerPage, $links['orderby']);
+?>
+  </div>
+
 </body>
 </html>
-<?php
+<?
 
 function createDataTable($start, $itemsPerPage, $links){
+
 
 	$qry = "SELECT CountryName, Imports, Exports FROM countries 
 				ORDER BY {$links['orderby']}
 				LIMIT $start, $itemsPerPage";
 		
-	echo "<table class=\"table\">
+	echo "<div class=\"panel panel-default\">
+  			<!-- Default panel contents -->
+  			<div class=\"panel-heading\">Trade Information</div>
+  			<div class=\"panel-body\">
+    	
+  		</div>
+  		<table class=\"table table-striped table-hover\">
 				<tr>
 					<th class=\"countryname\"><a href={$links['country']}>Country</a></th>
 					<th class=\"countryvalue\"><a href={$links['imports']}>Imports</a></th>
@@ -74,8 +77,10 @@ function createDataTable($start, $itemsPerPage, $links){
 					<td>$Exports</td>
 				</tr>\n";
 	}
-	echo "</table>\n";
+	echo "</table>
+			</div>\n";
 }
+
 function findpages($itemsPerPage){
 	if (isset($_GET['p'])){
 		// get it from the URL if we've already been here
@@ -94,7 +99,7 @@ function findpages($itemsPerPage){
 		else
 			$pages=1;
 	}
-	return($pages);
+	return $pages;
 }
 
 
@@ -105,7 +110,7 @@ function findstart(){
 	else
 		$start=0; // at the beginning
 		
- 	return $start ;
+ 	return($start);
 }
 
 function createSortLinks(){
@@ -160,39 +165,52 @@ function createSortLinks(){
 function createPageLinks($start, $pages, $itemsPerPage, $sort){
 	$thispage = "{$_SERVER['PHP_SELF']}";
 	$sort = isset($_GET['sort']) ? $_GET['sort']: "";
-	echo "This page is $thispage";
-	
+   	echo "***This page is $thispage"; 
+
 	
 	// creating page links
 	if ($pages > 1) {
-		echo '<br /><hr />';
+		echo '<div class="well"><nav>
+  				<ul class="pagination">' . "\n";
 		
 		// print Previous if not on the first page
 		$currentPage=($start/$itemsPerPage) + 1;
 		if ($currentPage != 1){
-			echo '<a href="'.$thispage.'?s='.($start - $itemsPerPage) . 
+			echo '	<li>
+						<a href="'.$thispage.'?s='.($start - $itemsPerPage) . 
 										'&amp;p=' . $pages . 
 										'&amp;sort=' . $sort .
-										'"> Previous </a>';
+										'" aria-label="Previous">
+        								<span aria-hidden="true">&laquo;</span>
+      					</a>
+    				</li>';
 		}
 		
 		// print page numbers
 		for ($i=1; $i <= $pages; $i++) {
 				if ($i != $currentPage) {
-					echo '<a href="'.$thispage.'?s='.(($itemsPerPage * ($i-1))) . 
+					echo '<li><a href="'.$thispage.'?s='.(($itemsPerPage * ($i-1))) . 
 												'&amp;p=' . $pages . 
 												'&amp;sort=' . $sort .
-												'"> '. $i .'  </a>'."\n";
+												'"> '. $i .'  </a></li>'."\n";
 				}  else {
-					echo $i . ' ';
+				
+					echo '<li class="active"><a href="#">' . $i . ' 
+						<span class="sr-only">(current)</span></a></li>';
 				}
 		}
 	
 		// print next if not on the last page
 		if ($currentPage != $pages){
-			echo '<a href="'.$thispage.'?s='.($start + $itemsPerPage) . '&amp;p=' . 
-												$pages . '"> Next </a>';
+			echo '	<li>
+						<a href="'.$thispage.'?s='.($start + $itemsPerPage) . '&amp;p=' . 
+												$pages . '" aria-label="Next">
+        					<span aria-hidden="true">&raquo;</span>
+      					</a>
+    				</li>';
 		}
+		echo ' </ul>
+			</nav></div>';
 	}
 }
 
