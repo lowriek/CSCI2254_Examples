@@ -91,7 +91,7 @@ function findpages($itemsPerPage){
 		else
 			$pages=1;
 	}
-	return($pages);
+	return $pages ;
 }
 
 
@@ -102,7 +102,7 @@ function findstart(){
 	else
 		$start=0; // at the beginning
 		
- 	return($start);
+ 	return $start ;
 }
 
 function createPageLinks($start, $pages, $itemsPerPage){
