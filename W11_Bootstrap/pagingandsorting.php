@@ -6,9 +6,22 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Pageable Displays</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </head>
 <body>
+<div class="container">
+	<div class="page-header">
+	  <h1>Import/Exports <small>with bootstrap</small></h1>
+	</div>
+</div>
 <?php
 	
 	// pagination support
@@ -19,8 +32,22 @@
 	$start = findstart();
 		
 	$links = createSortLinks();
+	
+	echo '<div class="container"><div class="panel panel-default">
+  		<div class="panel-heading">
+    	<h3 class="panel-title">Table Data</h3>
+  		</div>
+  			<div class="panel-body">';
+
 	createDataTable($start, $itemsPerPage, $links);
+	
+	 echo '</div>
+	 	</div></div>
+	 	
+	 	<div class="well">';
+	
 	createPageLinks($start, $pages, $itemsPerPage, $links['orderby']);
+	echo  	"</div>";
 ?>
 
 </body>
@@ -34,7 +61,7 @@ function createDataTable($start, $itemsPerPage, $links){
 				ORDER BY {$links['orderby']}
 				LIMIT $start, $itemsPerPage";
 		
-	echo "<table class=\"fixed\">
+	echo "<table class=\"table\">
 				<tr>
 					<th class=\"countryname\"><a href={$links['country']}>Country</a></th>
 					<th class=\"countryvalue\"><a href={$links['imports']}>Imports</a></th>
@@ -142,38 +169,49 @@ function createPageLinks($start, $pages, $itemsPerPage, $sort){
 	$sort = isset($_GET['sort']) ? $_GET['sort']: "";
 	echo "This page is $thispage";
 	
-	
+
+  		
 	// creating page links
 	if ($pages > 1) {
-		echo '<br /><hr />';
+		echo '<nav>
+  		<ul class="pagination">';
 		
 		// print Previous if not on the first page
 		$currentPage=($start/$itemsPerPage) + 1;
 		if ($currentPage != 1){
-			echo '<a href="'.$thispage.'?s='.($start - $itemsPerPage) . 
+		
+			echo '<li><a href="'.$thispage.'?s='.($start - $itemsPerPage) . 
 										'&amp;p=' . $pages . 
 										'&amp;sort=' . $sort .
-										'"> Previous </a>';
+										'"  aria-label="Previous"> <span aria-hidden="true">&laquo;</span> </a> </li>';
 		}
 		
 		// print page numbers
 		for ($i=1; $i <= $pages; $i++) {
 				if ($i != $currentPage) {
-					echo '<a href="'.$thispage.'?s='.(($itemsPerPage * ($i-1))) . 
+					echo '<li><a href="'.$thispage.'?s='.(($itemsPerPage * ($i-1))) . 
 												'&amp;p=' . $pages . 
 												'&amp;sort=' . $sort .
-												'"> '. $i .'  </a>'."\n";
+												'"> '. $i .'  </a>'."</li>\n";
 				}  else {
-					echo $i . ' ';
+				
+					echo "<li class=\"active\"><span class=\"sr-only\">$i </span></a></li>";
 				}
 		}
+
 	
 		// print next if not on the last page
 		if ($currentPage != $pages){
-			echo '<a href="'.$thispage.'?s='.($start + $itemsPerPage) . '&amp;p=' . 
-												$pages . '"> Next </a>';
+			echo ' <li><a href="'.$thispage.'?s='.($start + $itemsPerPage) . '&amp;p=' . 
+												$pages . '"  aria-label="Next"> <span aria-hidden="true">&raquo;</span> </a></li>';
 		}
+		
+		echo '  </ul>
+				</nav>';
 	}
 }
+
+
+
 
 ?>
