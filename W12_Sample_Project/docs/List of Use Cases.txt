@@ -1,0 +1,22 @@
+List of Use Cases with Numbers
+
+1. Insert a student
+
+Queries:
+insert into STUDENT (ID, FirstName, LastName, Major, GradYear) values (1, 'Larry', 'Lynch', 'CSCI', 2019);
+
+2. Register a student for a class
+
+Select a student
+select * from STUDENT;
+
+Select a course
+select * from COURSE;
+
+
+
+3. Compute the students GPA.
+
+
+
+4. ...
